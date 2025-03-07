@@ -19,6 +19,7 @@ export const authenticateToken = (
 
     jwt.verify(token, secretKey, (err, user) => {
       if (err) {
+        console.error('JWT verification error:', err);
         return res.sendStatus(403);
       }
 
