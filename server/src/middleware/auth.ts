@@ -1,6 +1,7 @@
 import type { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
+
 interface JwtPayload {
   username: string;
 }
@@ -19,14 +20,13 @@ export const authenticateToken = (
 
     jwt.verify(token, secretKey, (err, user) => {
       if (err) {
-        console.error('JWT verification error:', err);
-        return res.sendStatus(403);
+        return res.sendStatus(403); // Forbidden
       }
 
       req.user = user as JwtPayload;
       return next();
     });
   } else {
-    res.sendStatus(401);
+    res.sendStatus(401); // Unauthorized
   }
 };

@@ -11,15 +11,16 @@ const login = async (userInfo: UserLogin) => {
       body: JSON.stringify(userInfo),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      throw new Error('Login failed');
+      throw new Error('User information not retrieved, check network tab!');
     }
 
-    const data = await response.json();
-    return data.token;
-  } catch (error) {
-    console.error('Error logging in:', error);
-    throw error;
+    return data;
+  } catch (err) {
+    console.log('Error from user login: ', err);
+    return Promise.reject('Could not fetch user info');
   }
 };
 

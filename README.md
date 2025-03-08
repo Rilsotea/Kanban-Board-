@@ -3,6 +3,15 @@
 ## Overview
 Kanbanny Board is a project management tool designed to help teams visualize their work, maximize efficiency, and improve continuously. This application is inspired by the Kanban methodology and provides a simple, intuitive interface for managing tasks and projects.
 
+## Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+- [Contact](#contact)
+
 ## Features
 - **Task Management**: Create, update, and delete tasks.
 - **Boards and Columns**: Organize tasks into customizable boards and columns.
